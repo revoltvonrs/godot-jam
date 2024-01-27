@@ -1,6 +1,6 @@
 extends KinematicBody
 
-onready var player = get_node("../Player")
+onready var player = get_node("/root/TestK/Player")
 
 func _ready():
 	pass

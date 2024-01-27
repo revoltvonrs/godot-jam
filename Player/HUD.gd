@@ -20,10 +20,8 @@ func _process(delta):
 		
 	match gift:
 		0:
-			hand.texture = null
 			hand.texture = load("res://Art/HandBanana.png")
 		1:
-			hand.texture = null
 			hand.texture = load("res://Art/HandBalloons.png")
 
 func _ready():

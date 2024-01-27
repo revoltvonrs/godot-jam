@@ -40,7 +40,6 @@ func make_gift():
 	
 	self.add_child(gift)
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	timer.one_shot = false
 	timer.wait_time = 10
