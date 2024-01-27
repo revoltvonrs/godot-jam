@@ -4,6 +4,8 @@
 
 extends KinematicBody
 
+onready var hud = get_node("HUD")
+
 export var mouse_sensitivity: float = 0.001
 
 export var max_speed: float = 6 # Meters per second
@@ -15,7 +17,6 @@ export var max_ramp_angle: float = 45 # Max angle that the player can go upwards
 export var gravity: float = 15
 export var jump_impulse: float = 4.8
 var terminal_velocity: float = gravity * -5 # When this is reached, we stop increasing falling speed
-
 var snap: Vector3 # Needed for move_and_slide_with_snap(), which enables to go down slopes without falling
 
 onready var head: Spatial = $Head
@@ -47,6 +48,10 @@ func _input(event: InputEvent) -> void:
 		head.rotation_degrees = camera_rot
 
 func _physics_process(delta: float) -> void:
+	#drop
+	if Input.is_action_just_pressed("attack"):
+		print(hud.gift)
+		hud.gift = null
 	var forward_input: float = Input.get_action_strength("back") - Input.get_action_strength("forward")
 	var strafe_input: float = Input.get_action_strength("moveright") - Input.get_action_strength("moveleft")
 	wishdir = Vector3(strafe_input, 0, forward_input).rotated(Vector3.UP, self.global_transform.basis.get_euler().y).normalized() 
