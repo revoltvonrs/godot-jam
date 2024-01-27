@@ -31,5 +31,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, -0.347285, 2.12624, -0.0826797 )
 light_energy = 0.5
 
-[node name="StaticBody2" parent="." instance=ExtResource( 2 )]
-transform = Transform( -0.172565, 0, -0.984998, 0, 1, 0, 0.984998, 0, -0.172565, 0.940977, 2.04018, -5.64906 )
+[node name="gift" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78705, 1.6487, 1.43031 )

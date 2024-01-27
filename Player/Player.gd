@@ -6,8 +6,8 @@ extends KinematicBody
 
 export var mouse_sensitivity: float = 0.001
 
-export var max_speed: float = 10 # Meters per second
-export var max_air_speed: float = 1
+export var max_speed: float = 6 # Meters per second
+export var max_air_speed: float = 0.6
 export var accel: float = 60 # or max_speed * 10 : Reach max speed in 1 / 10th of a second
 export var friction: float = 2 # Higher friction = less slippery. In quake-based games, usually between 1 and 5
 export var max_ramp_angle: float = 45 # Max angle that the player can go upwards at full speed
