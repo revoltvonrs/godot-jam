@@ -14,6 +14,10 @@ config/name="Jam"
 run/main_scene="res://Levels/Test/Test.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Player="*res://Player/Player.tscn"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
