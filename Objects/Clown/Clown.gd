@@ -10,10 +10,10 @@ var timer = Timer.new()
 onready var player = get_parent().get_node("Player")
 onready var sprite = get_node("/root/Clown/Sprite3D")
 
-var laughTexture = load("res://Art/ClownLaugh.png")
-var neutralTexture = load("res://Art/ClownNeutral.png")
-var sadnessTexture = load("res://Art/ClownSadness.png")
-var angerTexture = load("res://Art/ClownAnger.png")
+var laughTexture = ImageTexture.create_from_image(Image.load_from_file("res://Art/ClownLaugh.png"))
+var neutralTexture = ImageTexture.create_from_image(Image.load_from_file("res://Art/ClownNeutral.png"))
+var sadnessTexture = ImageTexture.create_from_image(Image.load_from_file("res://Art/ClownSadness.png"))
+var angerTexture = ImageTexture.create_from_image(Image.load_from_file("res://Art/ClownAnger.png"))
 
 func _ready():
 	add_child(timer)
@@ -26,6 +26,8 @@ func _physics_process(delta):
 		$Sprite3D.look_at(Vector3(player.global_transform.origin.x,global_transform.origin.y, player.global_transform.origin.z),Vector3(0,1,0))
 		var player_position = player.global_transform.origin
 		direction = (player_position - global_transform.origin).normalized()
+		
+	funrate = clamp(funrate, 0, 30)
 	state = ceil((30.0-funrate)/10.0)
 	if state == 0:
 		win()
