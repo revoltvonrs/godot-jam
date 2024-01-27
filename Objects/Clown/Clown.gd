@@ -12,5 +12,5 @@ func _process(delta):
 	var player_position = Player.global_transform.origin
 	var direction = (player_position - global_transform.origin).normalized()
 	direction.y = 0
-	move_and_slide(direction * speed)
+	move_and_slide(direction * 5)
 	
