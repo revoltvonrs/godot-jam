@@ -10,11 +10,6 @@ var timer = Timer.new()
 onready var player = get_parent().get_node("Player")
 onready var sprite = $Sprite3D
 
-var laughTexture = load("res://Art/ClownLaugh.png")
-var neutralTexture = load("res://Art/ClownNeutral.png")
-var sadnessTexture = load("res://Art/ClownSadness.png")
-var angerTexture = load("res://Art/ClownAnger.png")
-
 func _ready():
 	add_child(timer)
 	timer.wait_time = 5
@@ -34,13 +29,16 @@ func _physics_process(delta):
 	move_and_slide(direction * speed)
 	
 	if state == 0:
-		sprite.texture = laughTexture
+		sprite.texture = load("res://Art/ClownLaugh.png")
+		
 	elif state == 1:
-		sprite.texture = neutralTexture
+		sprite.texture = load("res://Art/ClownNeutral.png")
+		
 	elif state == 2:
-		sprite.texture = sadnessTexture
+		sprite.texture = load("res://Art/ClownSadness.png")
+		
 	elif state == 3:
-		sprite.texture = angerTexture
+		sprite.texture = load("res://Art/ClownAnger.png")
 	#direction.y = 0
 	#print(direction.y)
 
