@@ -2,7 +2,7 @@ extends KinematicBody
 
 var speed = 5
 var state = 3 # [3, 2, 1, 0]
-var funrate = 10
+var funrate = 15
 var stun = false
 var direction = null
 var timer = Timer.new()
@@ -18,6 +18,7 @@ func _physics_process(delta):
 		var player_position = player.global_transform.origin
 		direction = (player_position - global_transform.origin).normalized()
 	state = ceil((30-funrate)/10)
+	
 	if state == 0:
 		win()
 	move_and_slide(direction * speed)
