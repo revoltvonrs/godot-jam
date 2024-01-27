@@ -124,18 +124,15 @@ func move_ground(input_velocity: Vector3, delta: float)-> void:
 
 # Accelerate without applying friction (with a lower allowed max_speed)
 func move_air(input_velocity: Vector3, delta: float)-> void:
-	# We first work on only on the horizontal components of our current velocity
 	var nextVelocity: Vector3 = Vector3.ZERO
 	nextVelocity.x = input_velocity.x
 	nextVelocity.z = input_velocity.z
 	nextVelocity = accelerate(wishdir, nextVelocity, accel, max_air_speed, delta)
 	
-	# Then get back our vertical component, and move the player
 	nextVelocity.y = vertical_velocity
 	velocity = move_and_slide_with_snap(nextVelocity, snap, Vector3.UP)
 
-# Set wish_jump depending on player input.
-func queue_jump()-> void:
+func queue_jump() -> void:
 	# If auto_jump is true, the player keeps jumping as long as the key is kept down
 	if auto_jump:
 		wish_jump = true if Input.is_action_pressed("jump") else false
