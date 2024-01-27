@@ -2,7 +2,7 @@ extends KinematicBody
 
 var speed = 5
 var state = 3 # [3, 2, 1, 0]
-var funrate = 20
+var funrate = 10
 var stun = false
 var direction = null
 var timer = Timer.new()
@@ -17,7 +17,9 @@ func _physics_process(delta):
 		$Sprite3D.look_at(Vector3(player.global_transform.origin.x,global_transform.origin.y, player.global_transform.origin.z),Vector3(0,1,0))
 		var player_position = player.global_transform.origin
 		direction = (player_position - global_transform.origin).normalized()
-	state = ceil((funrate-10)/3)
+	state = ceil((30-funrate)/10)
+	if state == 0:
+		win()
 	move_and_slide(direction * speed)
 	#direction.y = 0
 	#print(direction.y)
@@ -50,4 +52,5 @@ func _on_Area_area_entered(area):
 		funrate += 10
 		area.get_parent().queue_free()
 
-
+func win():
+	print("win")
