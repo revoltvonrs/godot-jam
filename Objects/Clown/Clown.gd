@@ -3,7 +3,7 @@ extends KinematicBody
 var speed = 5
 var state = 3 # [3, 2, 1, 0]
 var stun = false
-onready var player = get_parent().get_node("../Player")
+onready var player = get_parent().get_node("Player")
 var direction 
 func _ready():
 	pass

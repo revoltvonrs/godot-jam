@@ -49,8 +49,11 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	#drop
-	if Input.is_action_just_pressed("attack"):
-		print(hud.gift)
+	if Input.is_action_just_pressed("attack") && hud.gift != null:
+		var drop = load("res://Objects/Drops/"+Gifts.Gifts[hud.gift]+".tscn")
+		var instance = drop.instance()
+		instance.global_transform.origin = global_transform.origin
+		get_parent().add_child(instance)
 		hud.gift = null
 	var forward_input: float = Input.get_action_strength("back") - Input.get_action_strength("forward")
 	var strafe_input: float = Input.get_action_strength("moveright") - Input.get_action_strength("moveleft")

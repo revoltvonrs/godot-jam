@@ -4,7 +4,7 @@ extends KinematicBody
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var player = get_parent().get_node("../Player")
+onready var player = get_parent().get_node("Player")
 onready var clown = get_parent().get_node("Clown")
 var go_up = false
 func _ready():
