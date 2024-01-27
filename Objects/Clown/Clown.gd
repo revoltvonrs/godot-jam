@@ -1,5 +1,4 @@
-extends KinematicBody
-
+extends "res://Objects/object.gd"
 
 # Declare member variables here. Examples:
 # var a = 2
