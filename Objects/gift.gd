@@ -1,4 +1,4 @@
-extends KinematicBody
+extends "res://Objects/Object.gd"
 
 
 # Declare member variables here. Examples:
@@ -12,5 +12,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	$Sprite3D.look_at(Vector3(Player.global_transform.origin.x,global_transform.origin.y,Player.global_transform.origin.z),Vector3(0,1,0))
+#func _process(delta):
+#	pass
