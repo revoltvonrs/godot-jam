@@ -30,16 +30,16 @@ func _on_Area_area_entered(area):
 			stun = true
 			direction = Vector3()
 			yield(get_tree().create_timer(3), "timeout")
-			stun = false
 			print("backUp")
 		"Balloon":
 			area.get_parent().activate()
 			stun = true
 			direction = Vector3(0, 1, 0)
 			yield(get_tree().create_timer(2), "timeout")
-			stun = false
 		_:
 			drop = false
+			
+	stun = false
 			
 	if drop:
 		area.get_parent().queue_free()

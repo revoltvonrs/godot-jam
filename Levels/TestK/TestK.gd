@@ -31,7 +31,7 @@ func make_gift():
 	rng.randomize()
 	
 	var random_x = rand_range(bounds[0][0], bounds[4][0])
-	var hard_y = bounds[2][1] + 1
+	var hard_y = bounds[2][1] + 0.5
 	var random_z = rand_range(bounds[0][2], bounds[1][2])
 	
 	var random_position = Vector3(random_x, hard_y, random_z)
