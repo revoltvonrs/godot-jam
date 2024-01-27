@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Art/Crosshair.png" type="Texture" id=1]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Fonts/BrushSpidol.ttf"
@@ -24,3 +26,14 @@ margin_right = 218.0
 margin_bottom = 64.0
 custom_fonts/font = SubResource( 2 )
 text = "Clown fun rate"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -5.0
+margin_top = -5.0
+margin_right = 5.0
+margin_bottom = 5.0
+texture = ExtResource( 1 )
