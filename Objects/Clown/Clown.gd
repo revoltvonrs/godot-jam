@@ -2,8 +2,9 @@ extends KinematicBody
 
 var speed = 5
 var state = 3 # [3, 2, 1, 0]
-var funrate = 10
-var stun = false
+var funrate = 20
+var slip = false
+var flying = false
 var direction = null
 var timer = Timer.new()
 
@@ -12,15 +13,16 @@ onready var sprite = $Sprite3D
 
 func _ready():
 	add_child(timer)
-	timer.wait_time = 5
+	timer.wait_time = 10
 	timer.connect("timeout",self,"timeout")
 	timer.start()
 
 func _physics_process(delta):
-	if !stun:
+	if !flying and !slip:
 		$Sprite3D.look_at(Vector3(player.global_transform.origin.x,global_transform.origin.y, player.global_transform.origin.z),Vector3(0,1,0))
 		var player_position = player.global_transform.origin
 		direction = (player_position - global_transform.origin).normalized()
+		#direction.y = 0
 		
 	funrate = clamp(funrate, 0, 30)
 	state = ceil((30.0-funrate)/10.0)
@@ -28,17 +30,32 @@ func _physics_process(delta):
 		win()
 	move_and_slide(direction * speed)
 	
-	if state == 0:
-		sprite.texture = load("res://Art/ClownLaugh.png")
+	if !slip:
+		if state == 0:
+			sprite.texture = load("res://Art/ClownLaugh.png")
 		
-	elif state == 1:
-		sprite.texture = load("res://Art/ClownNeutral.png")
+		elif state == 1:
+			sprite.texture = load("res://Art/ClownNeutral.png")
 		
-	elif state == 2:
-		sprite.texture = load("res://Art/ClownSadness.png")
+		elif state == 2:
+			sprite.texture = load("res://Art/ClownSadness.png")
 		
-	elif state == 3:
-		sprite.texture = load("res://Art/ClownAnger.png")
+		elif state == 3:
+			sprite.texture = load("res://Art/ClownAnger.png")
+			
+	else:
+		if state == 0:
+			sprite.texture = load("res://Art/FallenLaugh.png")
+		
+		elif state == 1:
+			sprite.texture = load("res://Art/FallenNeutral.png")
+		
+		elif state == 2:
+			sprite.texture = load("res://Art/FallenSadness.png")
+		
+		elif state == 3:
+			sprite.texture = load("res://Art/FallenAnger.png")
+			
 	#direction.y = 0
 	#print(direction.y)
 
@@ -52,19 +69,20 @@ func _on_Area_area_entered(area):
 		"Banana":
 			area.get_parent().activate()
 			print("animation slip")
-			stun = true
+			slip = true
 			direction = Vector3()
-			yield(get_tree().create_timer(3), "timeout")
+			yield(get_tree().create_timer(2), "timeout")
 			print("backUp")
 		"Balloon":
 			area.get_parent().activate()
-			stun = true
+			flying = true
 			direction = Vector3(0, 1, 0)
 			yield(get_tree().create_timer(2), "timeout")
 		_:
 			drop = false
-			
-	stun = false
+	
+	slip = false		
+	flying = false
 			
 	if drop:
 		funrate += 10

@@ -34,6 +34,6 @@ transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, -0.347285
 light_energy = 0.5
 
 [node name="Clown" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.60421, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0448933, 1.75, 7.85124e-05 )
 
 [node name="Timer" type="Timer" parent="."]
