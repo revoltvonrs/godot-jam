@@ -1,8 +1,61 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/HUD.gd" type="Script" id=1]
+[ext_resource path="res://Art/Plaque.png" type="Texture" id=2]
+[ext_resource path="res://Art/EbaloLaugh.png" type="Texture" id=3]
+[ext_resource path="res://Art/EbaloSadness.png" type="Texture" id=4]
+[ext_resource path="res://Art/EbaloNeutral.png" type="Texture" id=5]
+[ext_resource path="res://Art/EbaloAnger.png" type="Texture" id=6]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+
+[node name="Dash" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.392157 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -120.0
+margin_top = 24.0
+margin_right = 120.0
+margin_bottom = 83.0
+texture = ExtResource( 2 )
+
+[node name="Anger" type="TextureRect" parent="."]
+margin_left = 410.0
+margin_top = 24.0
+margin_right = 650.0
+margin_bottom = 264.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="Sadness" type="TextureRect" parent="."]
+anchor_left = 0.447
+anchor_right = 0.447
+margin_left = 0.272003
+margin_top = 24.0
+margin_right = 240.272
+margin_bottom = 264.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="Neutral" type="TextureRect" parent="."]
+anchor_left = 0.494
+anchor_right = 0.494
+margin_left = 0.143951
+margin_top = 24.0
+margin_right = 240.144
+margin_bottom = 264.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.541
+anchor_right = 0.541
+margin_left = 0.0158691
+margin_top = 24.0
+margin_right = 240.016
+margin_bottom = 264.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
