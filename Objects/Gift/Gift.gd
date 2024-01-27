@@ -1,7 +1,7 @@
 extends "res://Objects/object.gd"
 
 var texture = "res://Art/icon.png"
-var get_gift= 0
+var get_gift = 0
 onready var hud = get_parent().get_node("Player").get_node("HUD")
 
 func _ready():

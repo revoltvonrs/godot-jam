@@ -24,16 +24,18 @@ func get_aabb_global_endpoints(mesh_instance: MeshInstance) -> Array:
 	return global_endpoints
 
 func make_gift():
+	var gift = load("res://Objects/Gift/Gift.tscn").instance()
+	
 	var bounds = get_aabb_global_endpoints(mesh_instance)
 	
 	var random_x = rand_range(bounds[0][0], bounds[4][0])
-	var hard_y = bounds[2][1]
+	var hard_y = bounds[2][1] + 1
 	var random_z = rand_range(bounds[0][2], bounds[1][2])
 	
 	var random_position = Vector3(random_x, hard_y, random_z)
-	print(random_position)
+	gift.translation = random_position
 	
-	#hud.gift = Gifts.Gifts.Banana
+	self.add_child(gift)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
