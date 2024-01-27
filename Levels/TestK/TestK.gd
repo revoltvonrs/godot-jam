@@ -35,7 +35,7 @@ func make_gift():
 	var random_z = rand_range(bounds[0][2], bounds[1][2])
 	
 	var random_position = Vector3(random_x, hard_y, random_z)
-	gift.gift = rng.randi_range(0, 1) # HARDCODED
+	gift.gift = rng.randi_range(0, 2) # HARDCODED
 	gift.translation = random_position
 	
 	self.add_child(gift)

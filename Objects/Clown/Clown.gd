@@ -7,7 +7,7 @@ var slip = false
 var flying = false
 var direction = null
 var timer = Timer.new()
-
+var bombed = false
 onready var player = get_parent().get_node("Player")
 onready var sprite = $Sprite3D
 
@@ -18,9 +18,9 @@ func _ready():
 	timer.start()
 
 func _physics_process(delta):
-	if !flying and !slip:
+	if !flying and !slip and !bombed:
 		$Sprite3D.look_at(Vector3(player.global_transform.origin.x,global_transform.origin.y, player.global_transform.origin.z),Vector3(0,1,0))
-		var player_position = Vector3(player.global_transform.origin.x, 0.125, player.global_transform.origin.z)
+		var player_position = Vector3(player.global_transform.origin.x, 0.175, player.global_transform.origin.z)
 		direction = (player_position - global_transform.origin).normalized()
 		#direction.y = 0
 		
@@ -78,10 +78,19 @@ func _on_Area_area_entered(area):
 			flying = true
 			direction = Vector3(0, 1, 0)
 			yield(get_tree().create_timer(2), "timeout")
+		"BabyBomb":
+			area.get_parent().activate()
+			bombed = true
+			direction = global_transform.origin - area.get_parent().global_transform.origin
+			direction.y = 0
+			speed = 30;
+			yield(get_tree().create_timer(0.3), "timeout")
+			speed = 5
+			bombed = false
 		_:
 			drop = false
 	
-	slip = false		
+	slip = false
 	flying = false
 			
 	if drop:
