@@ -1,6 +1,5 @@
 extends KinematicBody
 
-var texture = "res://Art/icon.png"
 var gift = 0
 
 onready var player = get_parent().get_node("../Player")

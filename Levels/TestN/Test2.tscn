@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Objects/Gift/Gift.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Drops/Banana.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Clown/Clown.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Drops/Balloon.tscn" type="PackedScene" id=5]
 
@@ -33,11 +33,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, -0.347285, 2.12624, -0.0826797 )
 light_energy = 0.5
 
-[node name="gift" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78705, 1.6487, 1.43031 )
-
 [node name="Clown" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.33034, 3.32446, 3.14884 )
 
+[node name="Banana" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07915, 0.970742, 5.38215 )
+
 [node name="Balloon" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.494662, -0.127735, 2.14761 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.494662, 3.28357, 2.14761 )

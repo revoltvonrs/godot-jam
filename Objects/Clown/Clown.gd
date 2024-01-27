@@ -24,6 +24,7 @@ func _on_Area_area_entered(area):
 	var drop = true
 	match area.name:
 		"Banana":
+			area.get_parent().activate()
 			print("animation slip")
 			stun = true
 			direction = Vector3()
@@ -31,6 +32,7 @@ func _on_Area_area_entered(area):
 			stun = false
 			print("backUp")
 		"Balloon":
+			area.get_parent().activate()
 			stun = true
 			direction = Vector3(0,1,0)
 			yield(get_tree().create_timer(2), "timeout")
@@ -38,7 +40,6 @@ func _on_Area_area_entered(area):
 		_:
 			drop = false
 	if drop:
-		area.get_parent().activate()
 		area.get_parent().queue_free()
 
 
