@@ -4,7 +4,11 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-enum Gifts {gift}
+const Gifts = {
+	Banana = 0,
+	Soap = 1,
+	SlipBalls = 2
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

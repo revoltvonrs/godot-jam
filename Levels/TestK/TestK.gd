@@ -4,7 +4,8 @@ onready var timer = $Timer
 onready var hud = $Player/HUD
 
 func make_gift():
-	print("added gift to scene")
+	hud.gift = Gifts.Gifts.Banana
+	print(hud.gift)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
