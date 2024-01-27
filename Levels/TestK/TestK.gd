@@ -24,20 +24,9 @@ func get_aabb_global_endpoints(mesh_instance: MeshInstance) -> Array:
 	return global_endpoints
 
 func make_gift():
-	#var bounds = get_aabb_global_endpoints(mesh_instance)
-
-	var random_x = 0.0
-	var random_z = 0.0
-	#var hard_y = bounds[2][1]
-	
-	#while true:
-	#	random_x = rand_range(bounds.position.x, bounds.position.x + bounds.size.x)
-	#	random_z = rand_range(bounds.position.z, bounds.position.z + bounds.size.z)
-	#	
-	#	if not (mesh_instance.intersects_ray(Vector3(random_x, hard_y, random_z), Vector3(0, -1, 0))):
-	#		break
-	
-	print("found gift location to spawn")
+	var bounds = get_aabb_global_endpoints(mesh_instance)
+	var random_x = rand_range(bounds[0][0], bounds[4][0])
+	var random_z = rand_range(bounds[0][2], bounds[1][2])
 	
 	hud.gift = Gifts.Gifts.Banana
 

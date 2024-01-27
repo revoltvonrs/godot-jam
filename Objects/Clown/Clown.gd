@@ -11,6 +11,7 @@ func _ready():
 func _physics_process(delta):
 	var player_position = player.global_transform.origin
 	var direction = (player_position - global_transform.origin).normalized()
-	direction.y = 0
+	#direction.y = 0
+	print(direction.y)
 	move_and_slide(direction * 5)
 	
