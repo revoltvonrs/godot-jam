@@ -16,7 +16,6 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Player="*res://Player/Player.tscn"
 Gifts="*res://Objects/Gifts.gd"
 
 [global]
