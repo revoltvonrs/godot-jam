@@ -6,7 +6,9 @@ var funrate = 10
 var stun = false
 var direction = null
 var timer = Timer.new()
+
 onready var player = get_parent().get_node("Player")
+onready var sprite = $Sprite3D
 
 func _ready():
 	timer.wait_time = 5
@@ -18,11 +20,19 @@ func _physics_process(delta):
 		var player_position = player.global_transform.origin
 		direction = (player_position - global_transform.origin).normalized()
 	state = ceil((30-funrate)/10)
-	if state == 0:
-		win()
+	
+	match state: # texture, speed change
+		0:
+			sprite.texture = load("res://Art/ClownLaugh.png")
+		1:
+			sprite.texture = load("res://Art/ClownNeutral.png")
+		2:
+			sprite.texture = load("res://Art/ClownSadness.png")
+		3:
+			sprite.texture = load("res://Art/ClownAnger.png")
+		
 	move_and_slide(direction * speed)
 	#direction.y = 0
-	#print(direction.y)
 
 func timeout():
 	funrate -= 5
