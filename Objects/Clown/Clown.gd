@@ -6,7 +6,14 @@ var funrate = 10
 var stun = false
 var direction = null
 var timer = Timer.new()
+
 onready var player = get_parent().get_node("Player")
+onready var sprite = get_node("/root/Clown/Sprite3D")
+
+var laughTexture = load("res://Art/ClownLaugh.png")
+var neutralTexture = load("res://Art/ClownNeutral.png")
+var sadnessTexture = load("res://Art/ClownSadness.png")
+var angerTexture = load("res://Art/ClownAnger.png")
 
 func _ready():
 	add_child(timer)
@@ -23,6 +30,17 @@ func _physics_process(delta):
 	if state == 0:
 		win()
 	move_and_slide(direction * speed)
+	
+	print(state)
+	match state:
+		0:
+			sprite.texture = laughTexture
+		1:
+			sprite.texture = neutralTexture
+		2:
+			sprite.texture = sadnessTexture
+		3:
+			sprite.texture = angerTexture
 	#direction.y = 0
 	#print(direction.y)
 
