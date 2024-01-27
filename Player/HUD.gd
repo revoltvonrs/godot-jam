@@ -3,6 +3,7 @@ extends Control
 var previousState = 3
 var gift = null
 
+onready var hand = $Hand
 onready var clown = get_node("/root/TestK/Clown")
 
 #func grayscale():
@@ -16,6 +17,14 @@ func highlight(state: int):
 func _process(delta):
 	if clown.state != previousState:
 		highlight(clown.state)
+		
+	match gift:
+		0:
+			hand.texture = null
+			hand.texture = load("res://Art/HandBanana.png")
+		1:
+			hand.texture = null
+			hand.texture = load("res://Art/HandBalloons.png")
 
 func _ready():
 	pass
