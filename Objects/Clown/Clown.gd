@@ -9,7 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var player_position = Player.global_transform.origin
+	var player_position = player.global_transform.origin
 	var direction = (player_position - global_transform.origin).normalized()
 	direction.y = 0
 	move_and_slide(direction * 5)
