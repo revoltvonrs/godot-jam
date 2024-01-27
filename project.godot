@@ -19,6 +19,10 @@ config/icon="res://icon.png"
 Player="*res://Player/Player.tscn"
 Gifts="*res://Objects/Gifts.gd"
 
+[global]
+
+fps=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
