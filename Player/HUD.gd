@@ -23,6 +23,8 @@ func _process(delta):
 			hand.texture = load("res://Art/HandBanana.png")
 		1:
 			hand.texture = load("res://Art/HandBalloons.png")
+		null:
+			hand.texture = load("res://Art/HandFree.png")
 
 func _ready():
 	pass
