@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Clown/Clown.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/TestK/TestK.gd" type="Script" id=3]
-[ext_resource path="res://Objects/Drops/BabyBomb.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -38,6 +37,3 @@ light_energy = 0.5
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0448933, 1.75, 7.85124e-05 )
 
 [node name="Timer" type="Timer" parent="."]
-
-[node name="BabyBomb" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.13455, 1.1898, 0.493572 )

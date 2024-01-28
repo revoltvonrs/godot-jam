@@ -87,6 +87,11 @@ func _on_Area_area_entered(area):
 			yield(get_tree().create_timer(0.3), "timeout")
 			speed = 5
 			bombed = false
+		"Skates":
+			area.get_parent().activate()
+			speed = 2
+			yield(get_tree().create_timer(8), "timeout")
+			speed = 5
 		_:
 			drop = false
 	

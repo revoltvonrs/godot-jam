@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Objects/Drops/Skates.gd" type="Script" id=1]
+[ext_resource path="res://Art/BabyBomb.png" type="Texture" id=2]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.501047
+
+[node name="Skates" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+texture = ExtResource( 2 )
+
+[node name="Skates" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Skates"]
+shape = SubResource( 1 )
