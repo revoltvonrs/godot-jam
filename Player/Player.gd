@@ -152,3 +152,6 @@ func queue_jump()-> void:
 		wish_jump = true
 	if Input.is_action_just_released("jump"):
 		wish_jump = false
+
+func _on_body_entered(body):
+	print("game over")
