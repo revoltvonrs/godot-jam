@@ -2,7 +2,7 @@ extends KinematicBody
 
 var speed = 5
 var state = 3 # [3, 2, 1, 0]
-var funrate = 20
+var funrate = 0
 var slip = false
 var flying = false
 var modifier= 1
@@ -26,7 +26,7 @@ func _physics_process(delta):
 		#direction.y = 0
 	funrate = clamp(funrate, 0, 30)
 	state = ceil((30.0-funrate)/10.0)
-	speed = 2.5 * state * modifier
+	speed = clamp(2.5 * state * modifier, 0, 5)
 	if state == 0:
 		win()
 	move_and_slide(direction * speed)
