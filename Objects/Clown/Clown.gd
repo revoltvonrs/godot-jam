@@ -5,6 +5,7 @@ var state = 3 # [3, 2, 1, 0]
 var funrate = 20
 var slip = false
 var flying = false
+var modifier= 1
 var direction = null
 var timer = Timer.new()
 var bombed = false
@@ -23,39 +24,33 @@ func _physics_process(delta):
 		var player_position = Vector3(player.global_transform.origin.x, 1.75, player.global_transform.origin.z)
 		direction = (player_position - global_transform.origin).normalized()
 		#direction.y = 0
-		
 	funrate = clamp(funrate, 0, 30)
 	state = ceil((30.0-funrate)/10.0)
+	speed = 2.5 * state * modifier
 	if state == 0:
 		win()
 	move_and_slide(direction * speed)
-	
-	if !slip:
-		if state == 0:
+	if state == 0:
+		if slip:
+			sprite.texture = load("res://Art/FallenLaugh.png")
+		else:
 			sprite.texture = load("res://Art/ClownLaugh.png")
-		
-		elif state == 1:
+	elif state == 1:
+		if slip:
+			sprite.texture = load("res://Art/FallenNeutral.png")
+		else:
 			sprite.texture = load("res://Art/ClownNeutral.png")
-		
-		elif state == 2:
+	elif state == 2:
+		if slip:
+			sprite.texture = load("res://Art/FallenSadness.png")
+		else:
 			sprite.texture = load("res://Art/ClownSadness.png")
 		
-		elif state == 3:
-			sprite.texture = load("res://Art/ClownAnger.png")
-			
-	else:
-		if state == 0:
-			sprite.texture = load("res://Art/FallenLaugh.png")
-		
-		elif state == 1:
-			sprite.texture = load("res://Art/FallenNeutral.png")
-		
-		elif state == 2:
-			sprite.texture = load("res://Art/FallenSadness.png")
-		
-		elif state == 3:
+	elif state == 3:
+		if slip:
 			sprite.texture = load("res://Art/FallenAnger.png")
-			
+		else:
+			sprite.texture = load("res://Art/ClownAnger.png")
 	#direction.y = 0
 	#print(direction.y)
 
@@ -83,15 +78,15 @@ func _on_Area_area_entered(area):
 			bombed = true
 			direction = global_transform.origin - area.get_parent().global_transform.origin
 			direction.y = 0
-			speed = 30;
+			modifier = 5
 			yield(get_tree().create_timer(0.3), "timeout")
-			speed = 5
+			modifier = 1
 			bombed = false
 		"Skates":
 			area.get_parent().activate()
-			speed = 2
+			modifier = 0.5
 			yield(get_tree().create_timer(8), "timeout")
-			speed = 5
+			modifier = 1
 		_:
 			drop = false
 	
