@@ -13,6 +13,8 @@ func _process(delta):
 			$Sprite3D.texture = load("res://Art/Balloons.png")
 		2:
 			$Sprite3D.texture = load("res://Art/BabyBomb.png")
+		3:
+			$Sprite3D.texture = load("res://Art/Skates.png")
 
 func _physics_process(delta):
 	$Sprite3D.look_at(Vector3(player.global_transform.origin.x,global_transform.origin.y, player.global_transform.origin.z),Vector3(0,1,0))	
