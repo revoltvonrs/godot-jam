@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/circus-145017.mp3-323c52517622108bc2d7cfbed6f36ee1.mp3str"
+
+[deps]
+
+source_file="res://Sounds/circus-145017.mp3"
+dest_files=[ "res://.import/circus-145017.mp3-323c52517622108bc2d7cfbed6f36ee1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
