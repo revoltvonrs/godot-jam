@@ -10,6 +10,7 @@ var direction = null
 var timer = Timer.new()
 var bombed = false
 onready var player = get_parent().get_node("Player")
+onready var hud = get_parent().get_node("Player").get_node("HUD")
 onready var sprite = $Sprite3D
 
 func _ready():
@@ -97,6 +98,18 @@ func _on_Area_area_entered(area):
 		funrate += 10
 		area.get_parent().queue_free()
 
+
 func win():
 	$AudioStreamPlayer.play()
+	hud.get_node("endGameText").visible = true
+	hud.get_node("endScreen").visible = true
+	hud.get_node("endGameText").text = "you win"
 	print("win")
+
+func lose():
+	hud.get_node("endGameText").visible = true
+	hud.get_node("endScreen").visible = true
+	hud.get_node("endGameText").text = "you lose"
+func _on_Area_body_entered(body):
+	if body == player:
+		lose()

@@ -30,3 +30,4 @@ stream = ExtResource( 3 )
 volume_db = 0.7
 
 [connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
