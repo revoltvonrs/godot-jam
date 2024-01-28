@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Jam"
-run/main_scene="res://Objects/Clown/Clown.tscn"
+run/main_scene="res://Levels/TestK/TestK.tscn"
 config/icon="res://Art/icon.png"
 
 [autoload]
@@ -21,6 +21,7 @@ Gifts="*res://Objects/Gifts.gd"
 [global]
 
 fps=false
+"default scene"=true
 
 [gui]
 
