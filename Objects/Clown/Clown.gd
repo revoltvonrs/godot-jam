@@ -20,11 +20,7 @@ func _ready():
 func _physics_process(delta):
 	if !flying and !slip and !bombed:
 		$Sprite3D.look_at(Vector3(player.global_transform.origin.x,global_transform.origin.y, player.global_transform.origin.z),Vector3(0,1,0))
-<<<<<<< HEAD
-		var player_position = Vector3(player.global_transform.origin.x, 0.175, player.global_transform.origin.z)
-=======
 		var player_position = Vector3(player.global_transform.origin.x, 1.75, player.global_transform.origin.z)
->>>>>>> 151e092326a6070217e915dcd1f11982e79686ea
 		direction = (player_position - global_transform.origin).normalized()
 		#direction.y = 0
 		
