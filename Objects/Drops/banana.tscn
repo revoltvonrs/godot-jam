@@ -5,7 +5,7 @@
 [ext_resource path="res://Sounds/Failure-drum-sound-effect.mp3" type="AudioStream" id=3]
 
 [sub_resource type="SphereShape" id=1]
-radius = 0.501047
+radius = 1.16426
 
 [node name="Banana" type="KinematicBody"]
 script = ExtResource( 1 )

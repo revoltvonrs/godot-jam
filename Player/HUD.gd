@@ -3,7 +3,10 @@ extends Control
 var previousState = 3
 var gift = null
 
-onready var hand = $Hand
+onready var handFree = $HandFree
+onready var handBalloons = $HandBalloons
+onready var handBanana = $HandBanana
+onready var handBabyBomb = $HandBabyBomb
 onready var angerTexture = $Anger
 onready var sadnessTexture = $Sadness
 onready var neutralTexture = $Neutral
@@ -56,11 +59,27 @@ func _process(delta):
 		
 	match gift:
 		0:
-			hand.texture = load("res://Art/HandBanana.png")
+			handBanana.visible = true
+			handFree.visible = false
+			handBalloons.visible = false
+			handBabyBomb.visible = false
+			#hand.texture = load("res://Art/HandBanana.png")
 		1:
-			hand.texture = load("res://Art/HandBalloons.png")
+			#hand.texture = load("res://Art/HandBalloons.png")
+			handBanana.visible = false
+			handFree.visible = false
+			handBalloons.visible = true
+			handBabyBomb.visible = false
+		2:
+			handBanana.visible = false
+			handFree.visible = false
+			handBalloons.visible = false
+			handBabyBomb.visible = true
 		null:
-			hand.texture = load("res://Art/HandFree.png")
+			handBanana.visible = false
+			handFree.visible = true
+			handBalloons.visible = false
+			handBabyBomb.visible = false
 
 func _ready():
 	pass

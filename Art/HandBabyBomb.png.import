@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ClownNeutral.png-43a779783b6e168ed4ae3dbcb202e4f9.stex"
+path="res://.import/HandBabyBomb.png-d2fa8da57793abaf84106c887fb49805.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/ClownNeutral.png"
-dest_files=[ "res://.import/ClownNeutral.png-43a779783b6e168ed4ae3dbcb202e4f9.stex" ]
+source_file="res://Art/HandBabyBomb.png"
+dest_files=[ "res://.import/HandBabyBomb.png-d2fa8da57793abaf84106c887fb49805.stex" ]
 
 [params]
 
