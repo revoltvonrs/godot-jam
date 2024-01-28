@@ -4,7 +4,6 @@ var gift = 0
 
 onready var player = get_parent().get_node("Player")
 onready var hud = get_parent().get_node("Player").get_node("HUD")
-
 func _process(delta):
 	match gift:
 		0:
@@ -21,5 +20,6 @@ func _physics_process(delta):
 
 func _on_Area_body_entered(body):
 	if body == player:
+		$AudioStreamPlayer.play()
 		hud.gift = gift
 		queue_free()

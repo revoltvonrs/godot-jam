@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Failure-drum-sound-effect.mp3-f57599364cc1cb120a2b5b
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

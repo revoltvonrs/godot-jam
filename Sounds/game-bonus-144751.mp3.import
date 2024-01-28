@@ -11,5 +11,5 @@ dest_files=[ "res://.import/game-bonus-144751.mp3-294f28d7f59a9f66f96a8cf9316d3b
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

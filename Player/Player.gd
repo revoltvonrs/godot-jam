@@ -50,6 +50,7 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	#drop
 	if Input.is_action_just_pressed("attack") && hud.gift != null:
+		$AudioStreamPlayer.play()
 		var drop = load("res://Objects/Drops/"+Gifts.Gifts[hud.gift]+".tscn").instance()
 		drop.global_transform.origin = global_transform.origin
 		get_parent().add_child(drop)

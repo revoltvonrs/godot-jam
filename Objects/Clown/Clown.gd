@@ -98,4 +98,5 @@ func _on_Area_area_entered(area):
 		area.get_parent().queue_free()
 
 func win():
+	$AudioStreamPlayer.play()
 	print("win")

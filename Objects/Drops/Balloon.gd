@@ -16,3 +16,4 @@ func _physics_process(delta):
 		
 func activate():
 	go_up = true
+	$AudioStreamPlayer3D.play()
