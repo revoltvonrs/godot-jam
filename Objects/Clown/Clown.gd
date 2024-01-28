@@ -103,13 +103,13 @@ func win():
 	$AudioStreamPlayer.play()
 	hud.get_node("endGameText").visible = true
 	hud.get_node("endScreen").visible = true
-	hud.get_node("endGameText").text = "you win"
+	hud.get_node("endGameText").text = "Win"
 	print("win")
 
 func lose():
 	hud.get_node("endGameText").visible = true
 	hud.get_node("endScreen").visible = true
-	hud.get_node("endGameText").text = "you lose"
+	hud.get_node("endGameText").text = "You lose"
 func _on_Area_body_entered(body):
 	if body == player:
 		lose()

@@ -4,6 +4,7 @@ var gift = 0
 
 onready var player = get_parent().get_node("Player")
 onready var hud = get_parent().get_node("Player").get_node("HUD")
+
 func _process(delta):
 	match gift:
 		0:

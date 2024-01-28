@@ -78,6 +78,7 @@ margin_right = -104.0
 texture = ExtResource( 7 )
 
 [node name="endScreen" type="TextureRect" parent="."]
+visible = false
 margin_left = -15.0
 margin_top = -7.0
 margin_right = 1031.0
